@@ -11,7 +11,7 @@ connectMeteorData = function(getMeteorData) {
       'object of Meteor reactive data sources.');
   }
 
-  /**
+/**
    * Returns wrapped component connected with Meteor reactive
    * data sources so that you don't have to access the data with
    * `this.data` but rather with `this.props`.
@@ -32,17 +32,12 @@ connectMeteorData = function(getMeteorData) {
       contextTypes: contextTypes,
 
       getMeteorData() {
-        return getMeteorData.call(
-          this,
-          this.props,
-          this.context);
+        return getMeteorData.call(this, this.props, this.context);
       },
 
       render() {
         return (
-          <WrappedComponent
-            {...this.props}
-            {...this.data} />
+          <WrappedComponent {...this.data} {...this.props}/>
         );
       }
     });
