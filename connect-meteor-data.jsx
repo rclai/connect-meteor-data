@@ -16,6 +16,7 @@ connectMeteorData = function(getMeteorData) {
    * data sources so that you don't have to access the data with
    * `this.data` but rather with `this.props`.
    * @param  {React.Component} WrappedComponent - A React component
+   * @param  {object} optional - an object with acceptable context types
    * @return {React.Component} The resulting React component
    */
   return function wrapReactComponent(WrappedComponent, contextTypes = {}) {
