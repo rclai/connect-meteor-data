@@ -14,7 +14,7 @@ Tinytest.add('react-meteor-data - basic track', function (test) {
     }
   });
 
-  var MeteorizedFoo = MeteorizeReactComponent(function() {
+  var MeteorizedFoo = connectMeteorData(function() {
     return {
       x: x.get()
     }
@@ -47,7 +47,7 @@ Tinytest.add('react-meteor-data - track based on props', function (test) {
     }
   });
 
-  var MeteorizedFoo = MeteorizeReactComponent(function(props) {
+  var MeteorizedFoo = connectMeteorData(function(props) {
     return {
       x: xs[props.n].get()
     };
@@ -96,7 +96,7 @@ Tinytest.add('react-meteor-data - track based on props and context', function (t
     }
   });
 
-  var MeteorizedFoo = MeteorizeReactComponent(function(props, context) {
+  var MeteorizedFoo = connectMeteorData(function(props, context) {
     return {
       y: context.x,
       x: x.get()
